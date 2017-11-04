@@ -17,7 +17,7 @@ $(document).ready(function () {
                 method: 'GET',
                 dataType: 'json',
                 success: function(usersResult){
-                    console.log('This is the userResult '+ usersResult);
+                    console.log(usersResult);
 
                     $.ajax({ // call to get the user messages
                         url: 'http://localhost:5000/chats/'+1234,
@@ -27,7 +27,7 @@ $(document).ready(function () {
                         method: 'GET',
                         dataType: 'json',
                         success: function(userMessages){
-                            console.log('This is the user Messages: '+userMessages);
+                            console.log(userMessages);
 
                             $.ajax({
                                 url: 'http://localhost:5000/random/meme',
@@ -78,9 +78,8 @@ $(document).ready(function () {
                 <div class="col-md-3">
                 <h5 style="color:green">Users</h5><hr><br>
                     <ul class="list-group" >
-                      <li class="list-group-item"><strong>${usersResult.data.users["0"].name}</strong></li>
-                      <li class="list-group-item"><strong>${usersResult.data.users[1].name}</strong></li>
-                      <li class="list-group-item"><strong>${usersResult.data.users[2].name}</strong></li>
+                      
+                      
                     </ul>
                 </div>
         `)
