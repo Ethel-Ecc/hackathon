@@ -8,7 +8,7 @@ $(document).ready(function () {
         method: 'GET',
         dataType: 'json',
         success: function(roomResult){
-            console.log('This is the Room Result: '+ roomResult);
+            console.log(roomResult);
             $.ajax({ // 2nd call to get the users
                 url: 'http://localhost:5000/users',
                 headers: {
@@ -59,11 +59,15 @@ $(document).ready(function () {
         "use strict";
         $("#container").html(`
                 <!-- random Result -->
-                <div class="col-md-3">
-                <h5 style="color: yellowgreen">Rooms</h5><hr><br>
+                <div class="col-md-3 pt-3" style="background-color: lightskyblue">
+                <h5 style="color: blue">Rooms</h5><hr><br>
                     <ul class="list-group" >
-                      <li class="list-group-item"><strong>${roomResult.data.rooms["0"].name}</strong></li> 
-                      <li class="list-group-item"><strong>${roomResult.data.rooms[1].name}</strong></li> 
+                      <li class="list-group-item"><strong>${roomResult.data.rooms["0"].name}</strong>
+                      &nbsp;&nbsp;
+                        <span><a href="#"> <i class="fa fa-sign-in" aria-hidden="true"></i></a></span></li> 
+                      <li class="list-group-item"><strong>${roomResult.data.rooms[1].name}</strong>
+                      &nbsp;&nbsp;
+                        <span><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i> </a></span></li> 
                     </ul>
                 </div>
              <!-- random Result -->
@@ -76,15 +80,13 @@ $(document).ready(function () {
                 </div>       
                     
                 <!-- users Result -->
-                <div class="col-md-3">
-                <h5 style="color:green">Users</h5><hr><br>
+                <div class="col-md-3 pb-3 pt-3" style="background-color: deepskyblue">
+                <h5 style="color:black">Users</h5><hr><br>
                     <ul class="list-group" >
-                      <li class="list-group-item"><strong>${usersResult.data.users["0"].name}</strong>&nbsp;&nbsp;
-                        <span><button class="btn btn-outline-primary btn-sm">Enter Room</button> </span></li> 
+                      <li class="list-group-item"><strong>${usersResult.data.users["0"].name}</strong></li> 
                       <li class="list-group-item"><strong>${usersResult.data.users[1].name}</strong></li> 
                       <li class="list-group-item"><strong>${usersResult .data.users[2].name}</strong></li>
-                     
-                    </ul>
+                 </ul>
                 </div>
         `)
 
