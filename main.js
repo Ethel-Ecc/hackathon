@@ -20,7 +20,7 @@ $(document).ready(function () {
                     console.log(usersResult);
 
                     $.ajax({ // call to get the user messages
-                        url: 'http://localhost:5000/chats/'+1234,
+                        url: 'http://localhost:5000/users',
                         headers: {
                             'Content-Type':'application/json'
                         },
@@ -69,17 +69,19 @@ $(document).ready(function () {
              <!-- random Result -->
                 <div class="col-md-4">
                 <h5 style="color: yellowgreen">Messages</h5><hr><br>
-                    <ul class="list-group" >
-                      <!--  <li class="list-group-item"><strong>${userMessages.data.message}</strong></li> -->
-                    </ul>
+                    <p>
+                      ${userMessages.data.message}
+                    </p>
                 </div>       
                     
                 <!-- users Result -->
                 <div class="col-md-3">
                 <h5 style="color:green">Users</h5><hr><br>
                     <ul class="list-group" >
-                      
-                      
+                      <li class="list-group-item"><strong>${usersResult.data.users["0"].name}</strong> <span><button></button> </span></li> 
+                      <li class="list-group-item"><strong>${usersResult.data.users[1].name}</strong></li> 
+                      <li class="list-group-item"><strong>${usersResult .data.users[2].name}</strong></li>
+                     
                     </ul>
                 </div>
         `)
