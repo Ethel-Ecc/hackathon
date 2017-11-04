@@ -1,0 +1,12 @@
+
+body{
+    margin: 0;
+}
+.navbar{
+    height: 20vh;
+    width: 100%;
+    border-bottom: solid 2px #222;
+}
+#container{
+    margin-top: 25vh;
+}
