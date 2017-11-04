@@ -72,13 +72,15 @@ $(document).ready(function () {
                     <p>
                       ${userMessages.data.message}
                     </p>
+                    <input type="text" class="form-control" style="width: 100%; height: 20%" placeholder="Chat here" autofocus="autofocus">
                 </div>       
                     
                 <!-- users Result -->
                 <div class="col-md-3">
                 <h5 style="color:green">Users</h5><hr><br>
                     <ul class="list-group" >
-                      <li class="list-group-item"><strong>${usersResult.data.users["0"].name}</strong> <span><button></button> </span></li> 
+                      <li class="list-group-item"><strong>${usersResult.data.users["0"].name}</strong>&nbsp;&nbsp;
+                        <span><button class="btn btn-outline-primary btn-sm">Enter Room</button> </span></li> 
                       <li class="list-group-item"><strong>${usersResult.data.users[1].name}</strong></li> 
                       <li class="list-group-item"><strong>${usersResult .data.users[2].name}</strong></li>
                      
